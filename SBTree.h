@@ -2,7 +2,7 @@
 #pragma once
 
 // Binary Search Tree
-class BinaryTree
+class SBTree
 {
 	// Element of a binary tree
 	struct TreeNode
@@ -20,16 +20,21 @@ class BinaryTree
 
 
 	TreeNode* root;	// Root of a tree
+
+	// Prevent copy constructor
+	SBTree(const SBTree& binTree);
 	
 public:
 
 	// Constructors & destructor
-	BinaryTree() { this->root = nullptr; }
+	SBTree() { this->root = nullptr; }
+
 
 	// Add element
 	void addElement(int n);
 
-	friend std::ostream& operator<< (std::ostream& out, BinaryTree& binTree);
+
+	friend std::ostream& operator<< (std::ostream& out, SBTree& binTree);
 
 private:	// "r_" - recursive private methods
 

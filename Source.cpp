@@ -9,11 +9,11 @@
 */
 
 #include <iostream>
-#include "BinaryTree.h"
+#include "SBTree.h"
 
 int main()
 {
-	BinaryTree bTree;
+	SBTree bTree;
 	bTree.addElement(10);
 	bTree.addElement(22);
 	bTree.addElement(1);

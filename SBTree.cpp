@@ -1,11 +1,11 @@
-#include "BinaryTree.h"
+#include "SBTree.h"
 
-void BinaryTree::addElement(int n)
+void SBTree::addElement(int n)
 {
 	r_addElement(root, n);
 }
 
-void BinaryTree::r_addElement(TreeNode*& node, int info)
+void SBTree::r_addElement(TreeNode*& node, int info)
 {
 	if (!node)	// if current node is nullptr
 		node = new TreeNode(info);	//	add element
@@ -16,7 +16,7 @@ void BinaryTree::r_addElement(TreeNode*& node, int info)
 			r_addElement(node->pRight, info);
 }
 
-std::ostream& BinaryTree::r_printTree(std::ostream& out, TreeNode* node, int level)
+std::ostream& SBTree::r_printTree(std::ostream& out, TreeNode* node, int level)
 {
 	if (node)
 	{
@@ -30,7 +30,7 @@ std::ostream& BinaryTree::r_printTree(std::ostream& out, TreeNode* node, int lev
 	return out;
 }
 
-std::ostream& operator<< (std::ostream& out, BinaryTree& binTree)
+std::ostream& operator<< (std::ostream& out, SBTree& binTree)
 {
 	const int zero = 0;
 
