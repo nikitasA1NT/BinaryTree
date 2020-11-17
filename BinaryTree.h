@@ -34,7 +34,7 @@ public:
 private:	// "r_" - recursive private methods
 
 	// Add element
-	void r_addElement(TreeNode* node, int n);
+	void r_addElement(TreeNode*& node, int n);
 
 	// Print binary tree
 	std::ostream& r_printTree(std::ostream& out, TreeNode* node, int level);
