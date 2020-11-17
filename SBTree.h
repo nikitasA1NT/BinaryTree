@@ -27,7 +27,12 @@ class SBTree
 public:
 
 	// Constructors & destructor
+
+	// Default
 	SBTree() { this->root = nullptr; }
+
+	// Initialization with {  }
+	SBTree(const std::initializer_list<int>& list);
 
 
 	// Add element

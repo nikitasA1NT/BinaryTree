@@ -1,5 +1,12 @@
 #include "SBTree.h"
 
+SBTree::SBTree(const std::initializer_list<int>& list):
+	SBTree()
+{
+	for (int element : list)
+		addElement(element);
+}
+
 void SBTree::addElement(int n)
 {
 	r_addElement(root, n);
