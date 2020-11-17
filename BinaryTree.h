@@ -1,3 +1,4 @@
+#include <iostream>
 #pragma once
 
 // Binary Search Tree
@@ -19,7 +20,7 @@ class BinaryTree
 
 
 	TreeNode* root;	// Root of a tree
-
+	
 public:
 
 	// Constructors & destructor
@@ -28,9 +29,13 @@ public:
 	// Add element
 	void addElement(int n);
 
+	friend std::ostream& operator<< (std::ostream& out, BinaryTree& binTree);
 
 private:	// "r_" - recursive private methods
 
-	// Add element (private)
+	// Add element
 	void r_addElement(TreeNode* node, int n);
+
+	// Print binary tree
+	std::ostream& r_printTree(std::ostream& out, TreeNode* node, int level);
 };
