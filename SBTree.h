@@ -36,7 +36,10 @@ public:
 
 
 	// Add element
-	void addElement(int n);
+	void insert(int n);
+
+	// Clear tree
+	void clear();
 
 
 	friend std::ostream& operator<< (std::ostream& out, SBTree& binTree);
@@ -44,8 +47,11 @@ public:
 private:	// "r_" - recursive private methods
 
 	// Add element
-	void r_addElement(TreeNode*& node, int n);
+	void r_insert(TreeNode*& node, int n);
+
+	// Clear tree
+	void r_clear(TreeNode*& node);
 
 	// Print binary tree
-	std::ostream& r_printTree(std::ostream& out, TreeNode* node, int level);
+	std::ostream& r_print(std::ostream& out, TreeNode* node, int level);
 };
