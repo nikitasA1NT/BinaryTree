@@ -1,6 +1,6 @@
 #include "BSTree.h"
 
-BSTree::BSTree(const std::initializer_list<int>& list):
+BSTree::BSTree(const std::initializer_list<int>& list) :
 	BSTree()
 {
 	for (int element : list)
