@@ -9,11 +9,11 @@
 */
 
 #include <iostream>
-#include "SBTree.h"
+#include "BSTree.h"
 
 int main()
 {
-	SBTree bTree{ 10, 22, 1, 3, 0, 41, -12, 2, 11, 4, -32, 8, 20, 10 };
+	BSTree bTree{ 10, 22, 1, 3, 0, 41, -12, 2, 11, 4, -32, 8, 20, 10 };
 
 	std::cout << bTree;
 

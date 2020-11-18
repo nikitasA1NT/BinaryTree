@@ -1,18 +1,18 @@
-#include "SBTree.h"
+#include "BSTree.h"
 
-SBTree::SBTree(const std::initializer_list<int>& list):
-	SBTree()
+BSTree::BSTree(const std::initializer_list<int>& list):
+	BSTree()
 {
 	for (int element : list)
 		insert(element);
 }
 
-void SBTree::insert(int n)
+void BSTree::insert(int n)
 {
 	r_insert(root, n);
 }
 
-void SBTree::r_insert(TreeNode*& node, int info)
+void BSTree::r_insert(TreeNode*& node, int info)
 {
 	if (!node)	// if current node is nullptr
 		node = new TreeNode(info);	//	add element
@@ -23,12 +23,12 @@ void SBTree::r_insert(TreeNode*& node, int info)
 			r_insert(node->pRight, info);
 }
 
-void SBTree::clear()
+void BSTree::clear()
 {
 	r_clear(root);
 }
 
-void SBTree::r_clear(TreeNode*& node)
+void BSTree::r_clear(TreeNode*& node)
 {
 	if (node)
 	{
@@ -39,7 +39,7 @@ void SBTree::r_clear(TreeNode*& node)
 	}
 }
 
-std::ostream& SBTree::r_print(std::ostream& out, TreeNode* node, int level)
+std::ostream& BSTree::r_print(std::ostream& out, TreeNode* node, int level)
 {
 	if (node)
 	{
@@ -53,7 +53,7 @@ std::ostream& SBTree::r_print(std::ostream& out, TreeNode* node, int level)
 	return out;
 }
 
-std::ostream& operator<< (std::ostream& out, SBTree& binTree)
+std::ostream& operator<< (std::ostream& out, BSTree& binTree)
 {
 	const int zero = 0;
 
