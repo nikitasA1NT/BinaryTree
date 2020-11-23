@@ -30,6 +30,8 @@ public:
 
 	// Default
 	BSTree() { this->root = nullptr; }
+	// Destructor
+	~BSTree() { clear(); }
 
 	// Initialization with {  }
 	BSTree(const std::initializer_list<int>& list);
