@@ -4,6 +4,11 @@
 // Binary Search Tree
 class BSTree
 {
+	// Prevent copy constructor
+	BSTree(const BSTree& binTree);
+
+protected:
+
 	// Element of a binary tree
 	struct TreeNode
 	{
@@ -18,18 +23,16 @@ class BSTree
 		}
 	};
 
+	int amountOfElems;	// Amount of elements
 
 	TreeNode* root;	// Root of a tree
-
-	// Prevent copy constructor
-	BSTree(const BSTree& binTree);
 	
 public:
 
 	// Constructors & destructor
 
 	// Default
-	BSTree() { this->root = nullptr; }
+	BSTree();
 
 	// Initialization with {  }
 	BSTree(const std::initializer_list<int>& list);
@@ -41,13 +44,20 @@ public:
 	// Clear tree
 	void clear();
 
+	// Return pointer to the array built during
+	// the reverse tree traversal
+	int* reverseTraversal();
+
+	// Amount of elements
+	int getAmount() { return amountOfElems; };
+
 
 	friend std::ostream& operator<< (std::ostream& out, BSTree& binTree);
 
-private:	// "r_" - recursive private methods
+protected:	// "r_" - recursive private methods
 
 	// Add element
-	void r_insert(TreeNode*& node, int n);
+	virtual void r_insert(TreeNode*& node, int n);
 
 	// Clear tree
 	void r_clear(TreeNode*& node);

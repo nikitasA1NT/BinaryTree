@@ -1,5 +1,12 @@
 #include "BSTree.h"
 
+BSTree::BSTree()
+{
+	this->root = nullptr;
+
+	amountOfElems = 0;
+}
+
 BSTree::BSTree(const std::initializer_list<int>& list) :
 	BSTree()
 {
@@ -10,6 +17,8 @@ BSTree::BSTree(const std::initializer_list<int>& list) :
 void BSTree::insert(int n)
 {
 	r_insert(root, n);
+
+	amountOfElems++;
 }
 
 void BSTree::r_insert(TreeNode*& node, int info)
@@ -26,6 +35,8 @@ void BSTree::r_insert(TreeNode*& node, int info)
 void BSTree::clear()
 {
 	r_clear(root);
+
+	amountOfElems = 0;
 }
 
 void BSTree::r_clear(TreeNode*& node)
