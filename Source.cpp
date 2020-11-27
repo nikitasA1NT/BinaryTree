@@ -15,9 +15,12 @@
 int main()
 {
 	BSTree bTree{ 10, 22, 1, 3, 0, 41, -12, 2, 11, 4, -32, 8, 20, 10 };
-	BalancedBSTree sortBTree = bTree;
 
-	std::cout << bTree << "--------------------------------------" << std::endl;
+	std::cout << "Binary search tree:" << std::endl << bTree << std::endl;
+
+	BalancedBSTree balBTree = bTree;
+
+	std::cout << "Balanced binary search tree:" << std::endl << balBTree << std::endl;
 
     return 0;
 }
