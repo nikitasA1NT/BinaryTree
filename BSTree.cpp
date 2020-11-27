@@ -3,8 +3,6 @@
 BSTree::BSTree()
 {
 	this->root = nullptr;
-
-	amountOfElems = 0;
 }
 
 BSTree::BSTree(const std::initializer_list<int>& list) :
@@ -17,8 +15,6 @@ BSTree::BSTree(const std::initializer_list<int>& list) :
 void BSTree::insert(int n)
 {
 	r_insert(root, n);
-
-	amountOfElems++;
 }
 
 void BSTree::r_insert(TreeNode*& node, int info)
@@ -35,8 +31,6 @@ void BSTree::r_insert(TreeNode*& node, int info)
 void BSTree::clear()
 {
 	r_clear(root);
-
-	amountOfElems = 0;
 }
 
 void BSTree::r_clear(TreeNode*& node)
@@ -48,6 +42,20 @@ void BSTree::r_clear(TreeNode*& node)
 		delete node;
 		node = nullptr;
 	}
+}
+
+std::vector<int> BSTree::reverseTraversal()
+{
+	std::vector<int> elemsInTraversal;
+
+	r_reverseTraversal(root, elemsInTraversal);
+
+	return elemsInTraversal;
+}
+
+void BSTree::r_reverseTraversal(TreeNode* node, std::vector<int>& elemsInTraversal)
+{
+	
 }
 
 std::ostream& BSTree::r_print(std::ostream& out, TreeNode* node, int level)

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #pragma once
 
 // Binary Search Tree
@@ -23,8 +24,6 @@ protected:
 		}
 	};
 
-	int amountOfElems;	// Amount of elements
-
 	TreeNode* root;	// Root of a tree
 	
 public:
@@ -44,12 +43,9 @@ public:
 	// Clear tree
 	void clear();
 
-	// Return pointer to the array built during
+	// Return vector built during
 	// the reverse tree traversal
-	int* reverseTraversal();
-
-	// Amount of elements
-	int getAmount() { return amountOfElems; };
+	std::vector<int> reverseTraversal();
 
 
 	friend std::ostream& operator<< (std::ostream& out, BSTree& binTree);
@@ -61,6 +57,10 @@ protected:	// "r_" - recursive private methods
 
 	// Clear tree
 	void r_clear(TreeNode*& node);
+
+	// Return vector built during
+	// the reverse tree traversal
+	void r_reverseTraversal(TreeNode* node, std::vector<int>& elemsInTraversal);
 
 	// Print binary tree
 	std::ostream& r_print(std::ostream& out, TreeNode* node, int level);
