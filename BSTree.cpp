@@ -55,7 +55,12 @@ std::vector<int> BSTree::reverseTraversal()
 
 void BSTree::r_reverseTraversal(TreeNode* node, std::vector<int>& elemsInTraversal)
 {
-	
+	if (node)
+	{
+		r_reverseTraversal(node->pLeft, elemsInTraversal);
+		elemsInTraversal.push_back(node->info);
+		r_reverseTraversal(node->pRight, elemsInTraversal);
+	}
 }
 
 std::ostream& BSTree::r_print(std::ostream& out, TreeNode* node, int level)

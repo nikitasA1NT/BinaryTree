@@ -43,7 +43,7 @@ public:
 	// Clear tree
 	void clear();
 
-	// Return vector built during
+	// Return auto sorted vector built during
 	// the reverse tree traversal
 	std::vector<int> reverseTraversal();
 
@@ -58,7 +58,7 @@ protected:	// "r_" - recursive private methods
 	// Clear tree
 	void r_clear(TreeNode*& node);
 
-	// Return vector built during
+	// Return auto sorted vector built during
 	// the reverse tree traversal
 	void r_reverseTraversal(TreeNode* node, std::vector<int>& elemsInTraversal);
 

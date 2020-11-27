@@ -18,6 +18,5 @@ int main()
 	BalancedBSTree s = bTree;
 
 	std::cout << bTree;
-
     return 0;
 }
