@@ -1,9 +1,15 @@
 #include <iostream>
+#include <vector>
 #pragma once
 
 // Binary Search Tree
 class BSTree
 {
+	// Prevent copy constructor
+	BSTree(const BSTree& binTree);
+
+protected:
+
 	// Element of a binary tree
 	struct TreeNode
 	{
@@ -18,11 +24,7 @@ class BSTree
 		}
 	};
 
-
 	TreeNode* root;	// Root of a tree
-
-	// Prevent copy constructor
-	BSTree(const BSTree& binTree);
 	
 public:
 
@@ -43,16 +45,24 @@ public:
 	// Clear tree
 	void clear();
 
+	// Return auto sorted vector built during
+	// the reverse tree traversal
+	std::vector<int> reverseTraversal();
+
 
 	friend std::ostream& operator<< (std::ostream& out, BSTree& binTree);
 
-private:	// "r_" - recursive private methods
+protected:	// "r_" - recursive private methods
 
 	// Add element
-	void r_insert(TreeNode*& node, int n);
+	virtual void r_insert(TreeNode*& node, int n);
 
 	// Clear tree
 	void r_clear(TreeNode*& node);
+
+	// Return auto sorted vector built during
+	// the reverse tree traversal
+	void r_reverseTraversal(TreeNode* node, std::vector<int>& elemsInTraversal);
 
 	// Print binary tree
 	std::ostream& r_print(std::ostream& out, TreeNode* node, int level);

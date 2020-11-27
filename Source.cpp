@@ -10,12 +10,14 @@
 
 #include <iostream>
 #include "BSTree.h"
+#include "BalancedBSTree.h"
 
 int main()
 {
 	BSTree bTree{ 10, 22, 1, 3, 0, 41, -12, 2, 11, 4, -32, 8, 20, 10 };
+	BalancedBSTree sortBTree = bTree;
 
-	std::cout << bTree;
+	std::cout << bTree << "--------------------------------------" << std::endl;
 
     return 0;
 }
