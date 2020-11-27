@@ -1,10 +1,5 @@
 #include "BSTree.h"
 
-BSTree::BSTree()
-{
-	this->root = nullptr;
-}
-
 BSTree::BSTree(const std::initializer_list<int>& list) :
 	BSTree()
 {
