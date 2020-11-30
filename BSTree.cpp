@@ -7,9 +7,13 @@ BSTree::BSTree(const std::initializer_list<int>& list) :
 		insert(element);
 }
 
-void BSTree::insert(int n)
+bool BSTree::insert(int n)
 {
+	if (search(n))
+		return false;
+
 	r_insert(root, n);
+	return true;
 }
 
 void BSTree::r_insert(TreeNode*& node, int info)
@@ -19,7 +23,7 @@ void BSTree::r_insert(TreeNode*& node, int info)
 	else
 		if (info < node->info)
 			r_insert(node->pLeft, info);
-		else // if (info >= node->info)
+		else // if (info > node->info)
 			r_insert(node->pRight, info);
 }
 

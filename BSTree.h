@@ -39,8 +39,9 @@ public:
 	BSTree(const std::initializer_list<int>& list);
 
 
-	// Add element
-	void insert(int n);
+	// Add element. If added returns "true" and if there is
+	// a dublicate returns "false"
+	bool insert(int n);
 
 	// Search element. If found returns "true"
 	bool search(int key);

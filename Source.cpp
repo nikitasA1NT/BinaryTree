@@ -14,7 +14,7 @@
 
 int main()
 {
-	BSTree bTree{ 73, 82, 47, 80, 71, 77, 99, 84, 62, 71, 4, 89, 21, 79, 33, 60, /*89, 88, 59, 12*/ };
+	BSTree bTree{ 73, 82, 47, 80, 71, 77, 99, 84, 62, 71, 4, 89, 21, 79, 33, 60, 89, 88, 59, 12 };
 
 	std::cout << "Binary search tree:" << std::endl << bTree << std::endl;
 
