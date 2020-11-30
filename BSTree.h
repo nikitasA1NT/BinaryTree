@@ -2,7 +2,7 @@
 #include <vector>
 #pragma once
 
-// Binary Search Tree
+// Binary Search Tree without dublicates
 class BSTree
 {
 	// Prevent copy constructor
@@ -42,6 +42,12 @@ public:
 	// Add element
 	void insert(int n);
 
+	// Search element. If found returns "true"
+	bool search(int key);
+
+	// Search element. If found returns "true" and changes "element"
+	bool search(int key, int& element);
+
 	// Clear tree
 	void clear();
 
@@ -56,6 +62,9 @@ protected:	// "r_" - recursive private methods
 
 	// Add element
 	virtual void r_insert(TreeNode*& node, int n);
+
+	// Search element. If found returns "true"
+	bool r_search(TreeNode* node, int key, int& element);
 
 	// Clear tree
 	void r_clear(TreeNode*& node);

@@ -23,6 +23,35 @@ void BSTree::r_insert(TreeNode*& node, int info)
 			r_insert(node->pRight, info);
 }
 
+bool BSTree::search(int key)
+{
+	int fictitiousElement;
+
+	return r_search(root, key, fictitiousElement);
+}
+
+bool BSTree::search(int key, int& element)
+{
+	return r_search(root, key, element);
+}
+
+bool BSTree::r_search(TreeNode* node, int key, int& element)
+{
+	if (node)
+		if (node->info == key)
+		{
+			element = node->info;
+			return true;
+		}
+		else
+			if (key < node->info)
+				return r_search(node->pLeft, key, element);
+			else
+				return r_search(node->pRight, key, element);
+	else
+		return false;
+}
+
 void BSTree::clear()
 {
 	r_clear(root);

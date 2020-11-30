@@ -1,7 +1,7 @@
 #pragma once
 #include "BSTree.h"
 
-// AVL balanced binary search tree
+// AVL balanced binary search tree without dublicates
 class BalancedBSTree :
     public BSTree
 {
